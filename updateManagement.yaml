@@ -1,0 +1,50 @@
+slice:
+   id: IoTService_sliced
+   slice-parts:
+      - dc-slice-part:
+         name: dc-slice3
+         # user is not available
+         VIM:
+            name: KUBERNETES
+            # VIM_Type_access is not available
+            vim-ref:
+               ip-api: X.X.X.X
+               ip-ssh: X.X.X.X
+               port-api: 21276
+               port-ssh: 22276
+            vim-credential: 
+               user-ssh: "necos"
+               password-ssh: "necos"
+            vdus:
+               - vdu:
+                  id: k8s-master
+                  name: k8s-master
+                  ip: 10.10.2.1
+                  # port is not available
+                  description: Master (controller) of kubernetes cluster
+                  vdu-image: kube-template
+                  type: master
+               - vdu:
+                  id: k8s-node
+                  name: k8s-node1
+                  ip: 10.10.2.2
+                  # port is not available
+                  description: Compute node of kubernetes cluster
+                  vdu-image: kube-template
+                  type: worker
+               - vdu:
+                  id: k8s-node
+                  name: k8s-node2
+                  ip: 10.10.2.3
+                  # port is not available
+                  description: Compute node of kubernetes cluster
+                  vdu-image: kube-template
+                  type: worker
+               - vdu:
+                  id: k8s-node
+                  name: k8s-node3
+                  ip: 10.10.2.4
+                  # port is not available
+                  description: Compute node of kubernetes cluster
+                  vdu-image: kube-template
+                  type: worker
